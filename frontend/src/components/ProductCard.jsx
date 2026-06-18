@@ -10,8 +10,10 @@ const ProductCard = ({ product }) => {
         <Link to={`/customer/product/${product._id}`}>
           <h3 className="product-title">{product.name}</h3>
         </Link>
-        <div className="product-price">${product.price.toFixed(2)}</div>
-        <button className="btn btn-primary btn-block">Add to Cart</button>
+        <div className="product-price">₹{product.price.toFixed(2)}</div>
+        <Link to={`/customer/product/${product._id}`} className="btn btn-primary btn-block" style={{ textAlign: 'center' }}>
+          View Details
+        </Link>
       </div>
     </div>
   );

@@ -81,7 +81,7 @@ const ProfilePage = () => {
                     <tr key={order._id}>
                       <td>{order._id.substring(0, 8)}...</td>
                       <td>{order.createdAt ? order.createdAt.substring(0, 10) : 'N/A'}</td>
-                      <td>${order.totalPrice.toFixed(2)}</td>
+                      <td>₹{order.totalPrice.toFixed(2)}</td>
                       <td>
                         <span className={order.status === 'Delivered' ? 'text-success' : order.status === 'Pending' ? 'text-danger' : 'text-secondary'}>
                           {order.status}

@@ -150,7 +150,7 @@ const AdminDashboard = () => {
               <tbody>
                 {products.map(p => (
                   <tr key={p._id}>
-                    <td>{p._id.substring(0, 8)}</td><td>{p.name}</td><td>{p.brand}</td><td>${p.price.toFixed(2)}</td>
+                    <td>{p._id.substring(0, 8)}</td><td>{p.name}</td><td>{p.brand}</td><td>₹{p.price.toFixed(2)}</td>
                     <td className={p.countInStock > 0 ? 'text-success' : 'text-danger'}>{p.countInStock}</td>
                     <td>
                       <button onClick={() => deleteProductHandler(p._id)} className="btn btn-danger" style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>Delete</button>
@@ -194,7 +194,7 @@ const AdminDashboard = () => {
               <tbody>
                 {orders.map(o => (
                   <tr key={o._id}>
-                    <td>{o._id.substring(0, 8)}</td><td>{o.user ? o.user.name : 'Unknown User'}</td><td>{o.createdAt ? o.createdAt.substring(0, 10) : 'N/A'}</td><td>${o.totalPrice.toFixed(2)}</td>
+                    <td>{o._id.substring(0, 8)}</td><td>{o.user ? o.user.name : 'Unknown User'}</td><td>{o.createdAt ? o.createdAt.substring(0, 10) : 'N/A'}</td><td>₹{o.totalPrice.toFixed(2)}</td>
                     <td>
                       <select 
                         value={o.status || 'Pending'} 

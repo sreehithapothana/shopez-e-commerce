@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 import './HomePage.css';
 
@@ -8,22 +9,12 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate fetching data from the backend API
     const fetchProducts = async () => {
       try {
-        // Mock data to simulate API response
-        const data = [
-          { _id: '1', name: 'Sony WH-1000XM5 Wireless Headphones', price: 348.00, image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=800', category: 'Audio' },
-          { _id: '2', name: 'Apple Watch Series 9', price: 399.00, image: 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?auto=format&fit=crop&q=80&w=800', category: 'Wearables' },
-          { _id: '3', name: 'MacBook Pro 16-inch (M3 Max)', price: 3499.00, image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800', category: 'Computers' },
-          { _id: '4', name: 'iPhone 15 Pro Max', price: 1199.00, image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=800', category: 'Smartphones' },
-        ];
-        
-        // Simulating network delay
-        setTimeout(() => {
-          setProducts(data);
-          setLoading(false);
-        }, 600);
+        const { data } = await axios.get('/api/products');
+        // Just take the first 4 products for the 'Trending' section
+        setProducts(data.slice(0, 4));
+        setLoading(false);
       } catch (error) {
         console.error("Failed to fetch products:", error);
         setLoading(false);

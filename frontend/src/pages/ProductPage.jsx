@@ -53,7 +53,7 @@ const ProductPage = () => {
         <div>
           <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>{product.name}</h2>
           <div style={{ paddingBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', marginBottom: '1.5rem' }}>
-            <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>${product.price.toFixed(2)}</span>
+            <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>₹{product.price.toFixed(2)}</span>
             <div style={{ marginTop: '0.5rem' }}>
               Status: <span className={product.countInStock > 0 ? 'text-success' : 'text-danger'}>
                 {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
@@ -68,7 +68,7 @@ const ProductPage = () => {
           <div className="card" style={{ padding: '2rem', border: '1px solid var(--border-color)', boxShadow: 'none' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)' }}>
               <span style={{ fontWeight: '500' }}>Price:</span>
-              <strong style={{ fontSize: '1.25rem' }}>${product.price.toFixed(2)}</strong>
+              <strong style={{ fontSize: '1.25rem' }}>₹{product.price.toFixed(2)}</strong>
             </div>
             
             {product.countInStock > 0 && (

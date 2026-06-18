@@ -33,7 +33,7 @@ const CartPage = () => {
                 <div style={{ flex: 1, minWidth: '150px' }}>
                   <Link to={`/customer/product/${item.product}`} style={{ fontWeight: '600', fontSize: '1.1rem' }}>{item.name}</Link>
                 </div>
-                <div style={{ fontWeight: '700', fontSize: '1.1rem' }}>${item.price.toFixed(2)}</div>
+                <div style={{ fontWeight: '700', fontSize: '1.1rem' }}>₹{item.price.toFixed(2)}</div>
                 <div>
                   <select 
                     value={item.qty} 
@@ -59,7 +59,7 @@ const CartPage = () => {
                 Subtotal ({totalItems} items)
               </h3>
               <p style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '2rem' }}>
-                ${subtotal.toFixed(2)}
+                ₹{subtotal.toFixed(2)}
               </p>
               <button onClick={checkoutHandler} className="btn btn-primary btn-block" style={{ padding: '0.8rem' }}>
                 PROCEED TO CHECKOUT

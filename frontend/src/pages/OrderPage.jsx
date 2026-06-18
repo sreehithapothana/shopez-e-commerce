@@ -50,10 +50,10 @@ const OrderPage = () => {
         <div style={{ flex: '1' }}>
           <div className="card" style={{ padding: '1.5rem' }}>
             <h3>Order Summary</h3>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}><span>Items</span><span>${order.itemsPrice.toFixed(2)}</span></div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}><span>Shipping</span><span>${order.shippingPrice.toFixed(2)}</span></div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}><span>Tax</span><span>${order.taxPrice.toFixed(2)}</span></div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.2rem' }}><span>Total</span><span>${order.totalPrice.toFixed(2)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}><span>Items</span><span>₹{order.itemsPrice.toFixed(2)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}><span>Shipping</span><span>₹{order.shippingPrice.toFixed(2)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}><span>Tax</span><span>₹{order.taxPrice.toFixed(2)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.2rem' }}><span>Total</span><span>₹{order.totalPrice.toFixed(2)}</span></div>
           </div>
         </div>
       </div>
