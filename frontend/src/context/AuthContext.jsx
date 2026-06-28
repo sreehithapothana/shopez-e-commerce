@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password, isAdmin) => {
     try {
-      await axios.post('/api/users/register', { name, email, password, isAdmin });
+      await axios.post('/api/users', { name, email, password, isAdmin });
       // Do not auto-login per requirements. Registration redirects to login page.
       return { success: true };
     } catch (error) {
