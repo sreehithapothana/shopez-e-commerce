@@ -10,7 +10,7 @@ import cartRoutes from './routes/cartRoutes.js';
 
 dotenv.config();
 
-connectDB();
+await connectDB();
 
 const app = express();
 
